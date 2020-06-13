@@ -1215,7 +1215,7 @@ input[type=text] {
 .colorlib-heading .sm {
   font-size: 16px;
   letter-spacing: 20px;
-  color: #adabab;
+  color: gray;
   text-transform: uppercase;
   display: block;
   margin-bottom: 30px;
