@@ -290,6 +290,34 @@
 		      "<i class='icon-arrow-right3 owl-direction'></i>"
 	     	]
 		})
+		$('.owl-brands-carousel').owlCarousel({
+			 animateOut: 'slideOutDown',
+		    animateIn: 'flipInX',
+			 autoplay: true,
+		    loop:true,
+		    margin:30,
+		    nav:false,
+		    dots: true,
+			autoplayHoverPause: true,
+			slideSpeed : 50,
+		    responsive:{
+		        0:{
+		            items:3
+				},
+				600:{
+					items:3
+				},
+				1000:{
+					items:5
+				}
+		    },
+		    navText: [
+		      "<i class='icon-arrow-left3 owl-direction'></i>",
+		      "<i class='icon-arrow-right3 owl-direction'></i>"
+	     	]
+		})
+
+
 	};
 
 
