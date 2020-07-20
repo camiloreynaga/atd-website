@@ -1803,3 +1803,16 @@ input[type=text] {
 }
 
 /*# sourceMappingURL=style.css.map */
+.brands h2{
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 30px;
+  margin-top: -65px;
+  margin-bottom: 50px;
+}
+.brands h2 .thin {
+  font-weight: 100;
+}
+.brands h2 .thick {
+  font-weight: 700;
+}
