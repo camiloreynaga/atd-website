@@ -1,9 +1,9 @@
 ---
+---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/atdperuc/public_html/
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp -R css $DEPLOYPATH
-    - /bin/cp -R fonts $DEPLOYPATH
-    - /bin/cp -R images $DEPLOYPATH
-    - /bin/cp -R js $DEPLOYPATH
+    # Definir el destino (carpeta del subdominio)
+    - export DEPLOYPATH=/home/atdperuc/demo.atdperu.pe/
+
+    # Eliminar archivos viejos (opcional, evita acumulación de basura)
+    - /bin/rsync -a --delete --exclude '.git' --exclude '.cpanel.yml' ./ $DEPLOYPATH
