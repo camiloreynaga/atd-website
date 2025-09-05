@@ -2,4 +2,8 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/atdperuc/demo.atdperu.pe/
-    - /bin/rsync -a --delete --exclude '.git' --exclude '.cpanel.yml' ./ $DEPLOYPATH
+    - /bin/rsync -a --delete \
+      --exclude '.git' \
+      --exclude '.cpanel.yml' \
+      --chmod=F644,D755 \
+      ./ $DEPLOYPATH
