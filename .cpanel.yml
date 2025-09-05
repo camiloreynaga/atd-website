@@ -1,9 +1,7 @@
 ---
----
 deployment:
   tasks:
     # Definir el destino (carpeta del subdominio)
     - export DEPLOYPATH=/home/atdperuc/demo.atdperu.pe/
-
     # Eliminar archivos viejos (opcional, evita acumulación de basura)
     - /bin/rsync -a --delete --exclude '.git' --exclude '.cpanel.yml' ./ $DEPLOYPATH
