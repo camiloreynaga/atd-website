@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initAOS();
   initBackToTop();
   initSmoothScrolling();
+  initPeruMap();
 
   // Add scroll event listeners
   window.addEventListener("scroll", handleScroll);
@@ -284,6 +285,119 @@ function initSmoothScrolling() {
 }
 
 /**
+ * Peru Map with Work Locations
+ */
+function initPeruMap() {
+  const mapContainer = document.getElementById("peru-map");
+
+  if (mapContainer && typeof L !== "undefined") {
+    // Initialize map centered on Peru
+    const map = L.map("peru-map").setView([-9.19, -75.0152], 6);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 18,
+    }).addTo(map);
+
+    // Define work locations with coordinates and project info
+    const workLocations = [
+      {
+        name: "Cusco",
+        lat: -13.5319,
+        lng: -71.9675,
+        projects: [
+          "Data Center Movistar",
+          "Hotel Belmond Monasterio",
+          "Hotel Belmond Nazarenas",
+        ],
+        icon: "🏗️",
+      },
+      {
+        name: "Lima",
+        lat: -12.0464,
+        lng: -77.0428,
+        projects: ["Oficinas Claro", "Data Center Tecnocom"],
+        icon: "🏢",
+      },
+      {
+        name: "Piura",
+        lat: -5.1945,
+        lng: -80.6328,
+        projects: ["Caja Piura", "Caja Sullana"],
+        icon: "🏦",
+      },
+      {
+        name: "Arequipa",
+        lat: -16.409,
+        lng: -71.5375,
+        projects: ["SEDAPAR", "Obras Civiles"],
+        icon: "🏭",
+      },
+      {
+        name: "Trujillo",
+        lat: -8.1116,
+        lng: -79.0288,
+        projects: ["Coopac Santo Domingo", "Coopac Dile"],
+        icon: "🏛️",
+      },
+      {
+        name: "Machu Picchu",
+        lat: -13.1631,
+        lng: -72.545,
+        projects: ["Hotel Belmond Machu Picchu", "Hotel Belmond Rio Sagrado"],
+        icon: "🏔️",
+      },
+    ];
+
+    // Add markers for each work location
+    workLocations.forEach((location) => {
+      const marker = L.marker([location.lat, location.lng]).addTo(map)
+        .bindPopup(`
+          <div class="map-popup">
+            <h6 class="fw-bold mb-2">${location.icon} ${location.name}</h6>
+            <p class="mb-1"><strong>Proyectos:</strong></p>
+            <ul class="list-unstyled mb-0">
+              ${location.projects
+                .map((project) => `<li>• ${project}</li>`)
+                .join("")}
+            </ul>
+          </div>
+        `);
+
+      // Add custom icon
+      const customIcon = L.divIcon({
+        className: "custom-marker",
+        html: `<div style="
+          background: var(--primary-color);
+          color: white;
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 16px;
+          border: 3px solid white;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        ">${location.icon}</div>`,
+        iconSize: [30, 30],
+        iconAnchor: [15, 15],
+      });
+
+      marker.setIcon(customIcon);
+    });
+
+    // Fit map to show all markers
+    const group = new L.featureGroup(
+      workLocations.map((loc) => L.marker([loc.lat, loc.lng]))
+    );
+    map.fitBounds(group.getBounds().pad(0.1));
+  }
+}
+
+/**
  * Scroll Event Handler
  */
 function handleScroll() {
@@ -519,18 +633,8 @@ function initAnalytics() {
  * Service Worker Registration (for PWA features)
  */
 function initServiceWorker() {
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker
-        .register("/sw.js")
-        .then((registration) => {
-          console.log("SW registered: ", registration);
-        })
-        .catch((registrationError) => {
-          console.log("SW registration failed: ", registrationError);
-        });
-    });
-  }
+  // Desactivado temporalmente hasta contar con /sw.js real
+  return;
 }
 
 // Initialize additional features when needed

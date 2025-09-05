@@ -19,13 +19,13 @@
     <meta name="geo.region" content="PE" />
     <meta name="geo.placename" content="Cusco, Perú" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
-    <link
+    <!-- Favicon (desactivado hasta contar con archivos reales) -->
+    <!-- <link rel="icon" type="image/x-icon" href="images/favicon.ico" /> -->
+    <!-- <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="images/apple-touch-icon.png"
-    />
+    /> -->
 
     <!-- Facebook and Twitter integration -->
     <meta
@@ -74,6 +74,12 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
 
@@ -113,15 +119,8 @@
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <img src="images/logo_b.png" alt="ATD PERU Logo" height="50" />
+            <img src="images/logo.png" alt="ATD PERU Logo" height="50" />
           </a>
-
-          <!-- ISO Badges -->
-          <div class="iso-badges d-none d-lg-flex me-3">
-            <span class="badge bg-success me-2">ISO 9001</span>
-            <span class="badge bg-info me-2">ISO 14001</span>
-            <span class="badge bg-warning">ISO 45001</span>
-          </div>
 
           <button
             class="navbar-toggler"
@@ -135,16 +134,13 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="nosotros.html">Nosotros</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="proyectos.html">Proyectos</a>
+                <a class="nav-link" href="experiencia.html">Experiencia</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="servicios.html">Servicios</a>
+                <a class="nav-link" href="servicios.html">Nuestros Servicios</a>
               </li>
 
               <li class="nav-item">
@@ -221,7 +217,7 @@
                       <p class="hero-subtitle">
                         Infraestructura tecnológica de vanguardia
                       </p>
-                      <a href="proyectos.html" class="btn btn-primary btn-lg"
+                      <a href="experiencia.html" class="btn btn-primary btn-lg"
                         >Ver Proyectos</a
                       >
                     </div>
@@ -273,7 +269,9 @@
             </div>
             <div class="col-lg-6" data-aos="fade-left">
               <div class="about-image">
-                <img src="images/logo.png" alt="ATD PERU" class="img-fluid" />
+                <div class="map-container">
+                  <div id="peru-map" style="height: 400px; width: 100%"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -285,7 +283,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6" data-aos="fade-up">
-              <div class="mission-card h-100">
+              <div class="mission-card h-100 p-4">
                 <div class="card-body text-center">
                   <div class="icon-wrapper mb-3">
                     <i class="bi bi-bullseye text-primary"></i>
@@ -301,7 +299,7 @@
               </div>
             </div>
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="vision-card h-100">
+              <div class="vision-card h-100 p-4">
                 <div class="card-body text-center">
                   <div class="icon-wrapper mb-3">
                     <i class="bi bi-eye text-primary"></i>
@@ -333,7 +331,7 @@
           </div>
           <div class="row g-4">
             <div class="col-lg-4 col-md-6" data-aos="fade-up">
-              <div class="service-card h-100">
+              <div class="service-card h-100 p-4">
                 <div class="card-body text-center">
                   <div class="service-icon mb-3">
                     <i class="bi bi-gear-wide-connected"></i>
@@ -351,7 +349,7 @@
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <div class="service-card h-100">
+              <div class="service-card h-100 p-4">
                 <div class="card-body text-center">
                   <div class="service-icon mb-3">
                     <i class="bi bi-building"></i>
@@ -369,7 +367,7 @@
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <div class="service-card h-100">
+              <div class="service-card h-100 p-4">
                 <div class="card-body text-center">
                   <div class="service-icon mb-3">
                     <i class="bi bi-hdd-network"></i>
@@ -382,11 +380,60 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="text-center mt-4">
-            <a href="servicios.html" class="btn btn-outline-primary"
-              >Ver Todos los Servicios</a
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="300"
             >
+              <div class="service-card h-100 p-4">
+                <div class="card-body text-center">
+                  <div class="service-icon mb-3">
+                    <i class="bi bi-lightning-charge"></i>
+                  </div>
+                  <h4>Energía</h4>
+                  <p>
+                    Instalaciones eléctricas, sistemas de energía renovable y
+                    soluciones de eficiencia energética.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="service-card h-100 p-4">
+                <div class="card-body text-center">
+                  <div class="service-icon mb-3">
+                    <i class="bi bi-tools"></i>
+                  </div>
+                  <h4>Mantenimiento</h4>
+                  <p>
+                    Servicios de mantenimiento preventivo y correctivo para
+                    infraestructura y equipos especializados.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <div class="service-card h-100 p-4">
+                <div class="card-body text-center">
+                  <div class="service-icon mb-3">
+                    <i class="bi bi-thermometer-sun"></i>
+                  </div>
+                  <h4>Climatización</h4>
+                  <p>
+                    Sistemas de aire acondicionado, ventilación y control de
+                    temperatura para ambientes especializados.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -462,6 +509,7 @@
                     src="images/brands_carousel/movistar.png"
                     alt="Movistar"
                     class="partner-logo"
+                    loading="lazy"
                   />
                 </div>
                 <div class="swiper-slide">
@@ -469,6 +517,7 @@
                     src="images/brands_carousel/claro.png"
                     alt="Claro"
                     class="partner-logo"
+                    loading="lazy"
                   />
                 </div>
                 <div class="swiper-slide">
@@ -476,6 +525,7 @@
                     src="images/brands_carousel/belmond_monasterio.png"
                     alt="Belmond Monasterio"
                     class="partner-logo"
+                    loading="lazy"
                   />
                 </div>
                 <div class="swiper-slide">
@@ -483,6 +533,7 @@
                     src="images/brands_carousel/belmond_nazarenas.png"
                     alt="Belmond Nazarenas"
                     class="partner-logo"
+                    loading="lazy"
                   />
                 </div>
                 <div class="swiper-slide">
@@ -490,6 +541,7 @@
                     src="images/brands_carousel/belmond_machupicchu.png"
                     alt="Belmond Machupicchu"
                     class="partner-logo"
+                    loading="lazy"
                   />
                 </div>
                 <div class="swiper-slide">
@@ -497,6 +549,7 @@
                     src="images/brands_carousel/belmond_rio_sagrado.png"
                     alt="Belmond Rio Sagrado"
                     class="partner-logo"
+                    loading="lazy"
                   />
                 </div>
                 <div class="swiper-slide">
@@ -504,6 +557,7 @@
                     src="images/brands_carousel/caja_piura_color.png"
                     alt="Caja Piura"
                     class="partner-logo"
+                    loading="lazy"
                   />
                 </div>
                 <div class="swiper-slide">
@@ -511,6 +565,7 @@
                     src="images/brands_carousel/caja_sullana_.png"
                     alt="Caja Sullana"
                     class="partner-logo"
+                    loading="lazy"
                   />
                 </div>
                 <div class="swiper-slide">
@@ -518,6 +573,7 @@
                     src="images/brands_carousel/coopac_santo_domingo.png"
                     alt="Coopac Santo Domingo"
                     class="partner-logo"
+                    loading="lazy"
                   />
                 </div>
                 <div class="swiper-slide">
@@ -525,6 +581,7 @@
                     src="images/brands_carousel/coopac_dile.png"
                     alt="Coopac Dile"
                     class="partner-logo"
+                    loading="lazy"
                   />
                 </div>
                 <div class="swiper-slide">
@@ -532,6 +589,7 @@
                     src="images/brands_carousel/coopac_mi_empresa.png"
                     alt="Coopac Mi Empresa"
                     class="partner-logo"
+                    loading="lazy"
                   />
                 </div>
                 <div class="swiper-slide">
@@ -539,6 +597,7 @@
                     src="images/brands_carousel/tecnocom.png"
                     alt="Tecnocom"
                     class="partner-logo"
+                    loading="lazy"
                   />
                 </div>
                 <div class="swiper-slide">
@@ -546,6 +605,7 @@
                     src="images/brands_carousel/sedapar.png"
                     alt="Sedapar"
                     class="partner-logo"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -589,7 +649,17 @@
           </div>
           <hr class="my-4" />
           <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-md-6 text-center mb-3">
+              <h6 class="text-white mb-3">Certificaciones ISO</h6>
+              <div class="iso-badges">
+                <span class="badge bg-success me-2 mb-2">ISO 9001</span>
+                <span class="badge bg-info me-2 mb-2">ISO 14001</span>
+                <span class="badge bg-warning me-2 mb-2">ISO 45001</span>
+                <span class="badge bg-danger me-2 mb-2">ISO 37001</span>
+                <span class="badge bg-primary mb-2">ISO 50001</span>
+              </div>
+            </div>
+            <div class="col-md-6 text-center">
               <p class="mb-0">
                 <small
                   >&copy;
@@ -619,6 +689,9 @@
 
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <!-- Custom JS -->
     <script src="js/main.js"></script>

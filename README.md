@@ -37,7 +37,7 @@ atd-website/
 ├── index.html                 # Página principal
 ├── nosotros.html             # Página "Nosotros"
 ├── servicios.html            # Página de servicios
-├── proyectos.html            # Portafolio de proyectos
+├── experiencia.html            # Portafolio de proyectos
 ├── contacto.html             # Página de contacto
 ├── trabaja-con-nosotros.html # Oportunidades laborales
 ├── css/
@@ -124,7 +124,7 @@ Los formularios están configurados para funcionar con:
 - Ventajas competitivas
 - Llamadas a la acción
 
-### **📋 Proyectos (proyectos.html)**
+### **📋 Proyectos (experiencia.html)**
 
 - Portafolio de obras
 - Filtros por categoría
@@ -208,7 +208,7 @@ Los colores principales están definidos en variables CSS:
 
 ### **Actualización de Contenido**
 
-1. **Proyectos**: Editar `proyectos.html`
+1. **Proyectos**: Editar `experiencia.html`
 2. **Servicios**: Modificar `servicios.html`
 3. **Equipo**: Actualizar `nosotros.html`
 4. **Vacantes**: Editar `trabaja-con-nosotros.html`

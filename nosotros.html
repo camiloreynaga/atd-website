@@ -63,15 +63,8 @@
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <img src="images/logo_b.png" alt="ATD PERU Logo" height="50" />
+            <img src="images/logo.png" alt="ATD PERU Logo" height="50" />
           </a>
-
-          <!-- ISO Badges -->
-          <div class="iso-badges d-none d-lg-flex me-3">
-            <span class="badge bg-success me-2">ISO 9001</span>
-            <span class="badge bg-info me-2">ISO 14001</span>
-            <span class="badge bg-warning">ISO 45001</span>
-          </div>
 
           <button
             class="navbar-toggler"
@@ -85,18 +78,14 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link active" href="nosotros.html">Nosotros</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="proyectos.html">Proyectos</a>
+                <a class="nav-link" href="experiencia.html">Experiencia</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="servicios.html">Servicios</a>
+                <a class="nav-link" href="servicios.html">Nuestros Servicios</a>
               </li>
-
               <li class="nav-item">
                 <a class="nav-link" href="contacto.html">Contacto</a>
               </li>
@@ -106,10 +95,7 @@
       </nav>
 
       <!-- Page Header -->
-      <section
-        class="page-header bg-primary text-white py-5"
-        style="margin-top: 80px"
-      >
+      <section class="page-header bg-primary text-white py-5 mt-5">
         <div class="container">
           <div class="row">
             <div class="col-lg-12 text-center">
@@ -220,7 +206,7 @@
           </div>
           <div class="row g-4">
             <div class="col-lg-4" data-aos="fade-up">
-              <div class="identity-card h-100">
+              <div class="identity-card h-100 p-4">
                 <div class="card-body text-center">
                   <div class="icon-wrapper mb-4">
                     <i class="bi bi-bullseye"></i>
@@ -236,7 +222,7 @@
               </div>
             </div>
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-              <div class="identity-card h-100">
+              <div class="identity-card h-100 p-4">
                 <div class="card-body text-center">
                   <div class="icon-wrapper mb-4">
                     <i class="bi bi-eye"></i>
@@ -252,7 +238,7 @@
               </div>
             </div>
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-              <div class="identity-card h-100">
+              <div class="identity-card h-100 p-4">
                 <div class="card-body text-center">
                   <div class="icon-wrapper mb-4">
                     <i class="bi bi-heart"></i>
@@ -399,9 +385,10 @@
               </p>
             </div>
           </div>
+          <!-- Primera fila: 3 certificaciones principales -->
           <div class="row g-4">
-            <div class="col-lg-4" data-aos="fade-up">
-              <div class="certification-card h-100">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+              <div class="certification-card h-100 p-4">
                 <div class="card-body text-center">
                   <div class="certification-icon mb-3">
                     <i class="bi bi-award text-success"></i>
@@ -415,11 +402,15 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-              <div class="certification-card h-100">
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="certification-card h-100 p-4">
                 <div class="card-body text-center">
                   <div class="certification-icon mb-3">
-                    <i class="bi bi-leaf text-info"></i>
+                    <i class="bi bi-globe text-info"></i>
                   </div>
                   <h4>ISO 14001:2015</h4>
                   <p class="text-muted">Sistema de Gestión Ambiental</p>
@@ -430,8 +421,12 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-              <div class="certification-card h-100">
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="certification-card h-100 p-4">
                 <div class="card-body text-center">
                   <div class="certification-icon mb-3">
                     <i class="bi bi-shield-check text-warning"></i>
@@ -448,55 +443,45 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- Statistics -->
-      <section
-        class="py-5 text-white"
-        style="
-          background-image: url('images/stats-bg.jpg');
-          background-size: cover;
-          background-position: center;
-        "
-      >
-        <div class="overlay"></div>
-        <div class="container position-relative">
-          <div class="row text-center">
-            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
-              <div class="stat-counter">
-                <div class="counter-number" data-target="15">0</div>
-                <div class="counter-label">Años de Experiencia</div>
-              </div>
-            </div>
+          <!-- Segunda fila: 2 certificaciones adicionales centradas -->
+          <div class="row g-4 justify-content-center mt-4">
             <div
-              class="col-lg-3 col-md-6 mb-4"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div class="stat-counter">
-                <div class="counter-number" data-target="250">0</div>
-                <div class="counter-label">Colaboradores</div>
-              </div>
-            </div>
-            <div
-              class="col-lg-3 col-md-6 mb-4"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div class="stat-counter">
-                <div class="counter-number" data-target="150">0</div>
-                <div class="counter-label">Proyectos Completados</div>
-              </div>
-            </div>
-            <div
-              class="col-lg-3 col-md-6 mb-4"
+              class="col-lg-5 col-md-6"
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <div class="stat-counter">
-                <div class="counter-number" data-target="10000">0</div>
-                <div class="counter-label">m² Construidos</div>
+              <div class="certification-card h-100 p-4">
+                <div class="card-body text-center">
+                  <div class="certification-icon mb-3">
+                    <i class="bi bi-shield-shaded text-danger"></i>
+                  </div>
+                  <h4>ISO 37001:2016</h4>
+                  <p class="text-muted">Sistema de Gestión Antisoborno</p>
+                  <p>
+                    Establece políticas y procedimientos para prevenir, detectar
+                    y abordar el soborno en nuestras operaciones.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-lg-5 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="certification-card h-100 p-4">
+                <div class="card-body text-center">
+                  <div class="certification-icon mb-3">
+                    <i class="bi bi-lightning text-primary"></i>
+                  </div>
+                  <h4>ISO 50001:2018</h4>
+                  <p class="text-muted">Sistema de Gestión de Energía</p>
+                  <p>
+                    Optimizamos el uso de energía en nuestros proyectos,
+                    contribuyendo a la eficiencia energética y sostenibilidad.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -538,7 +523,17 @@
           </div>
           <hr class="my-4" />
           <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-md-6 text-center mb-3">
+              <h6 class="text-white mb-3">Certificaciones ISO</h6>
+              <div class="iso-badges">
+                <span class="badge bg-success me-2 mb-2">ISO 9001</span>
+                <span class="badge bg-info me-2 mb-2">ISO 14001</span>
+                <span class="badge bg-warning me-2 mb-2">ISO 45001</span>
+                <span class="badge bg-danger me-2 mb-2">ISO 37001</span>
+                <span class="badge bg-primary mb-2">ISO 50001</span>
+              </div>
+            </div>
+            <div class="col-md-6 text-center">
               <p class="mb-0">
                 <small
                   >&copy;
