@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://atdperu.com/sitemap.xml
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all main pages
+Allow: /index.html
+Allow: /nosotros.html
+Allow: /servicios.html
+Allow: /experiencia.html
+Allow: /contacto.html
+Allow: /trabaja-con-nosotros.html
+
+# Allow images and assets
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /fonts/

@@ -19,13 +19,28 @@
     <meta name="geo.region" content="PE" />
     <meta name="geo.placename" content="Cusco, Perú" />
 
-    <!-- Favicon (desactivado hasta contar con archivos reales) -->
-    <!-- <link rel="icon" type="image/x-icon" href="images/favicon.ico" /> -->
-    <!-- <link
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="images/apple-touch-icon.png"
-    /> -->
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://atdperu.com/" />
 
     <!-- Facebook and Twitter integration -->
     <meta
@@ -89,9 +104,11 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "ATD PERU",
+        "alternateName": "ATD CONSTRUCTORA ASESORES Y SERVICIOS S.A.C.",
         "url": "https://atdperu.com",
         "logo": "https://atdperu.com/images/logo.png",
-        "description": "Empresa líder en servicios de construcción, consultoría, obras civiles, data center y mantenimiento",
+        "description": "Empresa líder en servicios de construcción, consultoría, obras civiles, data center y mantenimiento con más de 10 años de experiencia en Perú",
+        "foundingDate": "2009",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Av. Huayruropata 1953, Residencial Santa Lucia - Dpto 703",
@@ -103,12 +120,53 @@
           "@type": "ContactPoint",
           "telephone": "+51-084-266583",
           "contactType": "customer service",
-          "email": "proyectos@atdperu.com"
+          "email": "proyectos@atdperu.com",
+          "availableLanguage": "Spanish"
+        },
+        "sameAs": [
+          "https://www.facebook.com/atdperu",
+          "https://www.linkedin.com/company/atdperu",
+          "https://www.instagram.com/atdperu"
+        ],
+        "serviceArea": {
+          "@type": "Country",
+          "name": "Peru"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de Construcción y Consultoría",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Construcción y Obras Civiles"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Consultoría en Ingeniería"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Data Center y Telecomunicaciones"
+              }
+            }
+          ]
         }
       }
     </script>
   </head>
   <body>
+    <!-- Skip Links for Accessibility -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <a href="#main-nav" class="skip-link">Saltar a la navegación</a>
+
     <!-- Loading Spinner -->
     <div class="loader-wrapper" id="loader">
       <div class="loader"></div>
@@ -116,9 +174,18 @@
 
     <div id="page">
       <!-- Navigation -->
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <nav
+        class="navbar navbar-expand-lg navbar-light fixed-top"
+        id="mainNav"
+        role="navigation"
+        aria-label="Navegación principal"
+      >
         <div class="container">
-          <a class="navbar-brand" href="index.html">
+          <a
+            class="navbar-brand"
+            href="index.html"
+            aria-label="ATD PERU - Página de inicio"
+          >
             <img src="images/logo.png" alt="ATD PERU Logo" height="50" />
           </a>
 
@@ -127,24 +194,34 @@
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Alternar navegación"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="nosotros.html">Nosotros</a>
+            <ul class="navbar-nav ms-auto" role="menubar">
+              <li class="nav-item" role="none">
+                <a class="nav-link" href="nosotros.html" role="menuitem"
+                  >Nosotros</a
+                >
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="experiencia.html">Experiencia</a>
+              <li class="nav-item" role="none">
+                <a class="nav-link" href="experiencia.html" role="menuitem"
+                  >Experiencia</a
+                >
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="servicios.html">Nuestros Servicios</a>
+              <li class="nav-item" role="none">
+                <a class="nav-link" href="servicios.html" role="menuitem"
+                  >Nuestros Servicios</a
+                >
               </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="contacto.html">Contacto</a>
+              <li class="nav-item" role="none">
+                <a class="nav-link" href="contacto.html" role="menuitem"
+                  >Contacto</a
+                >
               </li>
             </ul>
           </div>
@@ -232,390 +309,398 @@
         </div>
       </section>
 
-      <!-- About Section -->
-      <section id="about" class="py-5">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6" data-aos="fade-right">
-              <div class="about-content">
-                <span class="section-subtitle">Bienvenido!</span>
+      <!-- Main Content -->
+      <main id="main-content">
+        <!-- About Section -->
+        <section id="about" class="py-5" aria-labelledby="about-heading">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-6" data-aos="fade-right">
+                <div class="about-content">
+                  <span class="section-subtitle">Bienvenido!</span>
+                  <h2 id="about-heading" class="section-title">
+                    Acerca de <span class="text-primary">Nosotros</span>
+                  </h2>
+                  <p class="lead">
+                    Fundada en 2009, ATD PERU se ha convertido en una empresa
+                    reconocida por su excelencia en los trabajos que ejecuta.
+                  </p>
+                  <p>
+                    Nuestro constante crecimiento se debe al grupo homogéneo de
+                    colaboradores comprometidos y apasionados en desarrollar con
+                    eficiencia los proyectos encomendados.
+                  </p>
+                  <div class="row mt-4">
+                    <div class="col-6">
+                      <div class="stat-item text-center">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Años de Experiencia</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="stat-item text-center">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Obras Completadas</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6" data-aos="fade-left">
+                <div class="about-image">
+                  <div class="map-container">
+                    <div id="peru-map" style="height: 400px; width: 100%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mission Vision Section -->
+        <section id="mission-vision" class="py-5 bg-light">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6" data-aos="fade-up">
+                <div class="mission-card h-100 p-4">
+                  <div class="card-body text-center">
+                    <div class="icon-wrapper mb-3">
+                      <i class="bi bi-bullseye text-primary"></i>
+                    </div>
+                    <h3 class="card-title">Misión</h3>
+                    <p class="card-text">
+                      Ser una empresa líder en servicios de construcción y
+                      consultoría, comprometida con la excelencia, la innovación
+                      y la satisfacción total del cliente, contribuyendo al
+                      desarrollo sostenible del país.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="vision-card h-100 p-4">
+                  <div class="card-body text-center">
+                    <div class="icon-wrapper mb-3">
+                      <i class="bi bi-eye text-primary"></i>
+                    </div>
+                    <h3 class="card-title">Visión</h3>
+                    <p class="card-text">
+                      Ser reconocidos como la empresa de referencia en el sector
+                      de la construcción y consultoría en Perú, destacando por
+                      nuestra calidad, innovación y compromiso con la
+                      sostenibilidad.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Services Preview Section -->
+        <section id="services-preview" class="py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+                <span class="section-subtitle">¿Qué Hacemos?</span>
                 <h2 class="section-title">
-                  Acerca de <span class="text-primary">Nosotros</span>
+                  Nuestros <span class="text-primary">Servicios</span>
                 </h2>
-                <p class="lead">
-                  Fundada en 2009, ATD PERU se ha convertido en una empresa
-                  reconocida por su excelencia en los trabajos que ejecuta.
-                </p>
-                <p>
-                  Nuestro constante crecimiento se debe al grupo homogéneo de
-                  colaboradores comprometidos y apasionados en desarrollar con
-                  eficiencia los proyectos encomendados.
-                </p>
-                <div class="row mt-4">
-                  <div class="col-6">
-                    <div class="stat-item text-center">
-                      <div class="stat-number">10+</div>
-                      <div class="stat-label">Años de Experiencia</div>
+              </div>
+            </div>
+            <div class="row g-4">
+              <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                <div class="service-card h-100 p-4">
+                  <div class="card-body text-center">
+                    <div class="service-icon mb-3">
+                      <i class="bi bi-gear-wide-connected"></i>
                     </div>
+                    <h4>Consultoría</h4>
+                    <p>
+                      Servicios con profesionales especialmente capacitados en
+                      ingeniería e instalaciones especiales.
+                    </p>
                   </div>
-                  <div class="col-6">
-                    <div class="stat-item text-center">
-                      <div class="stat-number">1000+</div>
-                      <div class="stat-label">Obras Completadas</div>
+                </div>
+              </div>
+              <div
+                class="col-lg-4 col-md-6"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="service-card h-100 p-4">
+                  <div class="card-body text-center">
+                    <div class="service-icon mb-3">
+                      <i class="bi bi-building"></i>
                     </div>
+                    <h4>Obras Civiles</h4>
+                    <p>
+                      Soluciones de calidad basadas estrictamente en las normas
+                      vigentes y reglamentos de obras civiles.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-lg-4 col-md-6"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="service-card h-100 p-4">
+                  <div class="card-body text-center">
+                    <div class="service-icon mb-3">
+                      <i class="bi bi-hdd-network"></i>
+                    </div>
+                    <h4>Data Center</h4>
+                    <p>
+                      Instalación de cableado estructurado, cuartos de
+                      telecomunicaciones y certificación de cableado.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-lg-4 col-md-6"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <div class="service-card h-100 p-4">
+                  <div class="card-body text-center">
+                    <div class="service-icon mb-3">
+                      <i class="bi bi-lightning-charge"></i>
+                    </div>
+                    <h4>Energía</h4>
+                    <p>
+                      Instalaciones eléctricas, sistemas de energía renovable y
+                      soluciones de eficiencia energética.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-lg-4 col-md-6"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <div class="service-card h-100 p-4">
+                  <div class="card-body text-center">
+                    <div class="service-icon mb-3">
+                      <i class="bi bi-tools"></i>
+                    </div>
+                    <h4>Mantenimiento</h4>
+                    <p>
+                      Servicios de mantenimiento preventivo y correctivo para
+                      infraestructura y equipos especializados.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-lg-4 col-md-6"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <div class="service-card h-100 p-4">
+                  <div class="card-body text-center">
+                    <div class="service-icon mb-3">
+                      <i class="bi bi-thermometer-sun"></i>
+                    </div>
+                    <h4>Climatización</h4>
+                    <p>
+                      Sistemas de aire acondicionado, ventilación y control de
+                      temperatura para ambientes especializados.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-6" data-aos="fade-left">
-              <div class="about-image">
-                <div class="map-container">
-                  <div id="peru-map" style="height: 400px; width: 100%"></div>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Mission Vision Section -->
-      <section id="mission-vision" class="py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6" data-aos="fade-up">
-              <div class="mission-card h-100 p-4">
-                <div class="card-body text-center">
-                  <div class="icon-wrapper mb-3">
-                    <i class="bi bi-bullseye text-primary"></i>
-                  </div>
-                  <h3 class="card-title">Misión</h3>
-                  <p class="card-text">
-                    Ser una empresa líder en servicios de construcción y
-                    consultoría, comprometida con la excelencia, la innovación y
-                    la satisfacción total del cliente, contribuyendo al
-                    desarrollo sostenible del país.
-                  </p>
+        <!-- Stats Section -->
+        <section
+          id="stats"
+          class="py-5 text-white"
+          style="
+            background-image: url('images/stats-bg.jpg');
+            background-size: cover;
+            background-position: center;
+          "
+        >
+          <div class="overlay"></div>
+          <div class="container position-relative">
+            <div class="row text-center">
+              <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
+                <div class="stat-counter">
+                  <div class="counter-number" data-target="1000">0</div>
+                  <div class="counter-label">Obras en todo el país</div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="vision-card h-100 p-4">
-                <div class="card-body text-center">
-                  <div class="icon-wrapper mb-3">
-                    <i class="bi bi-eye text-primary"></i>
-                  </div>
-                  <h3 class="card-title">Visión</h3>
-                  <p class="card-text">
-                    Ser reconocidos como la empresa de referencia en el sector
-                    de la construcción y consultoría en Perú, destacando por
-                    nuestra calidad, innovación y compromiso con la
-                    sostenibilidad.
-                  </p>
+              <div
+                class="col-lg-3 col-md-6 mb-4"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="stat-counter">
+                  <div class="counter-number" data-target="200">0</div>
+                  <div class="counter-label">Colaboradores</div>
+                </div>
+              </div>
+              <div
+                class="col-lg-3 col-md-6 mb-4"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="stat-counter">
+                  <div class="counter-number" data-target="100">0</div>
+                  <div class="counter-label">Consultorías</div>
+                </div>
+              </div>
+              <div
+                class="col-lg-3 col-md-6 mb-4"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <div class="stat-counter">
+                  <div class="counter-number" data-target="9000">0</div>
+                  <div class="counter-label">Servicios ejecutados</div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Services Preview Section -->
-      <section id="services-preview" class="py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
-              <span class="section-subtitle">¿Qué Hacemos?</span>
-              <h2 class="section-title">
-                Nuestros <span class="text-primary">Servicios</span>
-              </h2>
+        <!-- Partners Section -->
+        <section id="partners" class="py-5 bg-light">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title">
+                  Nuestros <span class="text-primary">Socios</span>
+                </h2>
+              </div>
             </div>
-          </div>
-          <div class="row g-4">
-            <div class="col-lg-4 col-md-6" data-aos="fade-up">
-              <div class="service-card h-100 p-4">
-                <div class="card-body text-center">
-                  <div class="service-icon mb-3">
-                    <i class="bi bi-gear-wide-connected"></i>
+            <div class="partners-carousel" data-aos="fade-up">
+              <div class="swiper partners-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="images/brands_carousel/movistar.png"
+                      alt="Logo de Movistar - Cliente de ATD PERU"
+                      class="partner-logo"
+                      loading="lazy"
+                      width="150"
+                      height="60"
+                    />
                   </div>
-                  <h4>Consultoría</h4>
-                  <p>
-                    Servicios con profesionales especialmente capacitados en
-                    ingeniería e instalaciones especiales.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-4 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div class="service-card h-100 p-4">
-                <div class="card-body text-center">
-                  <div class="service-icon mb-3">
-                    <i class="bi bi-building"></i>
+                  <div class="swiper-slide">
+                    <img
+                      src="images/brands_carousel/claro.png"
+                      alt="Claro"
+                      class="partner-logo"
+                      loading="lazy"
+                    />
                   </div>
-                  <h4>Obras Civiles</h4>
-                  <p>
-                    Soluciones de calidad basadas estrictamente en las normas
-                    vigentes y reglamentos de obras civiles.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-4 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div class="service-card h-100 p-4">
-                <div class="card-body text-center">
-                  <div class="service-icon mb-3">
-                    <i class="bi bi-hdd-network"></i>
+                  <div class="swiper-slide">
+                    <img
+                      src="images/brands_carousel/belmond_monasterio.png"
+                      alt="Belmond Monasterio"
+                      class="partner-logo"
+                      loading="lazy"
+                    />
                   </div>
-                  <h4>Data Center</h4>
-                  <p>
-                    Instalación de cableado estructurado, cuartos de
-                    telecomunicaciones y certificación de cableado.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-4 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div class="service-card h-100 p-4">
-                <div class="card-body text-center">
-                  <div class="service-icon mb-3">
-                    <i class="bi bi-lightning-charge"></i>
+                  <div class="swiper-slide">
+                    <img
+                      src="images/brands_carousel/belmond_nazarenas.png"
+                      alt="Belmond Nazarenas"
+                      class="partner-logo"
+                      loading="lazy"
+                    />
                   </div>
-                  <h4>Energía</h4>
-                  <p>
-                    Instalaciones eléctricas, sistemas de energía renovable y
-                    soluciones de eficiencia energética.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-4 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
-              <div class="service-card h-100 p-4">
-                <div class="card-body text-center">
-                  <div class="service-icon mb-3">
-                    <i class="bi bi-tools"></i>
+                  <div class="swiper-slide">
+                    <img
+                      src="images/brands_carousel/belmond_machupicchu.png"
+                      alt="Belmond Machupicchu"
+                      class="partner-logo"
+                      loading="lazy"
+                    />
                   </div>
-                  <h4>Mantenimiento</h4>
-                  <p>
-                    Servicios de mantenimiento preventivo y correctivo para
-                    infraestructura y equipos especializados.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-4 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="500"
-            >
-              <div class="service-card h-100 p-4">
-                <div class="card-body text-center">
-                  <div class="service-icon mb-3">
-                    <i class="bi bi-thermometer-sun"></i>
+                  <div class="swiper-slide">
+                    <img
+                      src="images/brands_carousel/belmond_rio_sagrado.png"
+                      alt="Belmond Rio Sagrado"
+                      class="partner-logo"
+                      loading="lazy"
+                    />
                   </div>
-                  <h4>Climatización</h4>
-                  <p>
-                    Sistemas de aire acondicionado, ventilación y control de
-                    temperatura para ambientes especializados.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Stats Section -->
-      <section
-        id="stats"
-        class="py-5 text-white"
-        style="
-          background-image: url('images/stats-bg.jpg');
-          background-size: cover;
-          background-position: center;
-        "
-      >
-        <div class="overlay"></div>
-        <div class="container position-relative">
-          <div class="row text-center">
-            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
-              <div class="stat-counter">
-                <div class="counter-number" data-target="1000">0</div>
-                <div class="counter-label">Obras en todo el país</div>
-              </div>
-            </div>
-            <div
-              class="col-lg-3 col-md-6 mb-4"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div class="stat-counter">
-                <div class="counter-number" data-target="200">0</div>
-                <div class="counter-label">Colaboradores</div>
-              </div>
-            </div>
-            <div
-              class="col-lg-3 col-md-6 mb-4"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div class="stat-counter">
-                <div class="counter-number" data-target="100">0</div>
-                <div class="counter-label">Consultorías</div>
-              </div>
-            </div>
-            <div
-              class="col-lg-3 col-md-6 mb-4"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div class="stat-counter">
-                <div class="counter-number" data-target="9000">0</div>
-                <div class="counter-label">Servicios ejecutados</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Partners Section -->
-      <section id="partners" class="py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
-              <h2 class="section-title">
-                Nuestros <span class="text-primary">Socios</span>
-              </h2>
-            </div>
-          </div>
-          <div class="partners-carousel" data-aos="fade-up">
-            <div class="swiper partners-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="images/brands_carousel/movistar.png"
-                    alt="Movistar"
-                    class="partner-logo"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="images/brands_carousel/claro.png"
-                    alt="Claro"
-                    class="partner-logo"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="images/brands_carousel/belmond_monasterio.png"
-                    alt="Belmond Monasterio"
-                    class="partner-logo"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="images/brands_carousel/belmond_nazarenas.png"
-                    alt="Belmond Nazarenas"
-                    class="partner-logo"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="images/brands_carousel/belmond_machupicchu.png"
-                    alt="Belmond Machupicchu"
-                    class="partner-logo"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="images/brands_carousel/belmond_rio_sagrado.png"
-                    alt="Belmond Rio Sagrado"
-                    class="partner-logo"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="images/brands_carousel/caja_piura_color.png"
-                    alt="Caja Piura"
-                    class="partner-logo"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="images/brands_carousel/caja_sullana_.png"
-                    alt="Caja Sullana"
-                    class="partner-logo"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="images/brands_carousel/coopac_santo_domingo.png"
-                    alt="Coopac Santo Domingo"
-                    class="partner-logo"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="images/brands_carousel/coopac_dile.png"
-                    alt="Coopac Dile"
-                    class="partner-logo"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="images/brands_carousel/coopac_mi_empresa.png"
-                    alt="Coopac Mi Empresa"
-                    class="partner-logo"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="images/brands_carousel/tecnocom.png"
-                    alt="Tecnocom"
-                    class="partner-logo"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="images/brands_carousel/sedapar.png"
-                    alt="Sedapar"
-                    class="partner-logo"
-                    loading="lazy"
-                  />
+                  <div class="swiper-slide">
+                    <img
+                      src="images/brands_carousel/caja_piura_color.png"
+                      alt="Caja Piura"
+                      class="partner-logo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="images/brands_carousel/caja_sullana_.png"
+                      alt="Caja Sullana"
+                      class="partner-logo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="images/brands_carousel/coopac_santo_domingo.png"
+                      alt="Coopac Santo Domingo"
+                      class="partner-logo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="images/brands_carousel/coopac_dile.png"
+                      alt="Coopac Dile"
+                      class="partner-logo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="images/brands_carousel/coopac_mi_empresa.png"
+                      alt="Coopac Mi Empresa"
+                      class="partner-logo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="images/brands_carousel/tecnocom.png"
+                      alt="Tecnocom"
+                      class="partner-logo"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="images/brands_carousel/sedapar.png"
+                      alt="Sedapar"
+                      class="partner-logo"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
+        </section>
+      </main>
       <!-- Footer -->
-      <footer class="footer bg-dark text-white py-5">
+      <footer
+        class="footer bg-dark text-white py-5"
+        role="contentinfo"
+        aria-label="Información del pie de página"
+      >
         <div class="container">
           <div class="row">
             <div class="col-lg-4 mb-4">
