@@ -58,49 +58,63 @@ ErrorDocument 500 /500.html
     Header append Vary User-Agent
 </IfModule>
 
-# Browser Caching
+# Browser Caching - Optimizado para desarrollo
 <IfModule mod_expires.c>
     ExpiresActive On
     
-    # Images
-    ExpiresByType image/jpg "access plus 1 month"
-    ExpiresByType image/jpeg "access plus 1 month"
-    ExpiresByType image/gif "access plus 1 month"
-    ExpiresByType image/png "access plus 1 month"
-    ExpiresByType image/webp "access plus 1 month"
-    ExpiresByType image/svg+xml "access plus 1 month"
-    ExpiresByType image/x-icon "access plus 1 year"
+    # Images - Cache más corto para desarrollo
+    ExpiresByType image/jpg "access plus 1 week"
+    ExpiresByType image/jpeg "access plus 1 week"
+    ExpiresByType image/gif "access plus 1 week"
+    ExpiresByType image/png "access plus 1 week"
+    ExpiresByType image/webp "access plus 1 week"
+    ExpiresByType image/svg+xml "access plus 1 week"
+    ExpiresByType image/x-icon "access plus 1 month"
     
-    # CSS and JavaScript
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
-    ExpiresByType text/javascript "access plus 1 month"
+    # CSS and JavaScript - Cache muy corto para desarrollo
+    ExpiresByType text/css "access plus 1 hour"
+    ExpiresByType application/javascript "access plus 1 hour"
+    ExpiresByType text/javascript "access plus 1 hour"
     
-    # Fonts
-    ExpiresByType font/woff "access plus 1 year"
-    ExpiresByType font/woff2 "access plus 1 year"
-    ExpiresByType application/font-woff "access plus 1 year"
-    ExpiresByType application/font-woff2 "access plus 1 year"
+    # Fonts - Cache moderado
+    ExpiresByType font/woff "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 month"
+    ExpiresByType application/font-woff "access plus 1 month"
+    ExpiresByType application/font-woff2 "access plus 1 month"
     
-    # HTML
-    ExpiresByType text/html "access plus 1 hour"
+    # HTML - Sin caché para desarrollo
+    ExpiresByType text/html "access plus 0 seconds"
     
-    # Data
+    # Data - Sin caché
     ExpiresByType application/json "access plus 0 seconds"
     ExpiresByType application/xml "access plus 0 seconds"
     ExpiresByType text/xml "access plus 0 seconds"
 </IfModule>
 
-# Cache Control Headers
+# Cache Control Headers - Optimizado para desarrollo
 <IfModule mod_headers.c>
-    # Cache static assets
-    <FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
-        Header set Cache-Control "public, max-age=31536000"
+    # Cache static assets - Cache más corto para desarrollo
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=3600, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Last-Modified "Thu, 01 Jan 1970 00:00:00 GMT"
     </FilesMatch>
     
-    # Cache HTML files
+    # Cache images - Cache moderado
+    <FilesMatch "\.(png|jpg|jpeg|gif|ico|svg)$">
+        Header set Cache-Control "public, max-age=604800"
+    </FilesMatch>
+    
+    # Cache fonts - Cache largo
+    <FilesMatch "\.(woff|woff2|ttf|eot)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+    
+    # HTML files - Sin caché para desarrollo
     <FilesMatch "\.(html|htm)$">
-        Header set Cache-Control "public, max-age=3600"
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
     </FilesMatch>
 </IfModule>
 

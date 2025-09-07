@@ -19,6 +19,14 @@
     <meta name="geo.region" content="PE" />
     <meta name="geo.placename" content="Cusco, Perú" />
 
+    <!-- Anti-cache meta tags para desarrollo -->
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
     <link
@@ -96,7 +104,16 @@
     />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=465f9e4f" />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css?v=465f9e4f" as="style" />
+    <link rel="preload" href="js/main.js?v=a21fad49" as="script" />
+    <link rel="preload" href="images/logo.png" as="image" />
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
@@ -223,6 +240,17 @@
                   >Contacto</a
                 >
               </li>
+              <li class="nav-item" role="none">
+                <button
+                  class="btn btn-outline-primary btn-sm ms-2"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#searchModal"
+                  aria-label="Buscar en el sitio"
+                >
+                  <i class="bi bi-search"></i>
+                </button>
+              </li>
             </ul>
           </div>
         </div>
@@ -235,6 +263,8 @@
             <div
               class="swiper-slide"
               style="background-image: url('images/hero-1.jpg')"
+              data-bg-webp="images/hero-1.webp"
+              data-bg-fallback="images/hero-1.jpg"
             >
               <div class="hero-overlay"></div>
               <div class="container">
@@ -766,6 +796,50 @@
       <i class="bi bi-arrow-up"></i>
     </button>
 
+    <!-- Search Modal -->
+    <div
+      class="modal fade"
+      id="searchModal"
+      tabindex="-1"
+      aria-labelledby="searchModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="searchModalLabel">
+              Buscar en el sitio
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="search-container">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="searchInput"
+                  placeholder="Buscar servicios, proyectos, información..."
+                  aria-label="Término de búsqueda"
+                />
+                <button class="btn btn-primary" type="button" id="searchButton">
+                  <i class="bi bi-search"></i> Buscar
+                </button>
+              </div>
+              <div id="searchResults" class="search-results">
+                <!-- Los resultados de búsqueda aparecerán aquí -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -778,7 +852,28 @@
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
+    <!-- Google Analytics 4 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "GA_MEASUREMENT_ID", {
+        page_title: "ATD PERU - Servicios de Construcción y Consultoría",
+        page_location: window.location.href,
+        custom_map: {
+          custom_parameter_1: "construction_services",
+          custom_parameter_2: "peru_company",
+        },
+      });
+    </script>
+
     <!-- Custom JS -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=a21fad49"></script>
   </body>
 </html>
