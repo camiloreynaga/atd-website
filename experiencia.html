@@ -138,27 +138,21 @@
                 </button>
                 <button
                   class="btn btn-outline-primary me-2 mb-2 filter-btn"
-                  data-filter="edificios"
+                  data-filter="obras"
                 >
-                  Edificios
+                  Obras
                 </button>
                 <button
                   class="btn btn-outline-primary me-2 mb-2 filter-btn"
-                  data-filter="data-center"
+                  data-filter="mantenimiento"
                 >
-                  Data Center
+                  Mantenimiento
                 </button>
                 <button
                   class="btn btn-outline-primary me-2 mb-2 filter-btn"
-                  data-filter="infraestructura"
+                  data-filter="consultoria"
                 >
-                  Infraestructura
-                </button>
-                <button
-                  class="btn btn-outline-primary me-2 mb-2 filter-btn"
-                  data-filter="comercial"
-                >
-                  Comercial
+                  Consultoría
                 </button>
               </div>
             </div>
@@ -170,11 +164,8 @@
       <section class="py-5">
         <div class="container">
           <div class="row g-4" id="projectsGrid">
-            <!-- Proyecto 1: Santo Domingo -->
-            <div
-              class="col-lg-4 col-md-6 project-item"
-              data-category="edificios comercial"
-            >
+            <!-- OBRAS - Proyecto 1: Santo Domingo -->
+            <div class="col-lg-4 col-md-6 project-item" data-category="obras">
               <div
                 class="project-card h-100"
                 onclick="openGallery('santo-domingo')"
@@ -200,21 +191,36 @@
                   <a
                     href="images/building-1.jpg"
                     data-lightbox="santo-domingo"
-                    data-title="Santo Domingo - Interior"
+                    data-title="Santo Domingo - Interior principal"
                     style="display: none"
                   ></a>
                   <a
                     href="images/building-2.jpg"
                     data-lightbox="santo-domingo"
-                    data-title="Santo Domingo - Oficinas"
+                    data-title="Santo Domingo - Oficinas administrativas"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-3.jpg"
+                    data-lightbox="santo-domingo"
+                    data-title="Santo Domingo - Área de atención al cliente"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-4.jpg"
+                    data-lightbox="santo-domingo"
+                    data-title="Santo Domingo - Salas de reuniones"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-5.jpg"
+                    data-lightbox="santo-domingo"
+                    data-title="Santo Domingo - Fachada nocturna"
                     style="display: none"
                   ></a>
                 </div>
                 <div class="project-info p-4">
                   <h4>Santo Domingo de Guzman</h4>
-                  <p class="text-muted">
-                    Sede principal de la Cooperativa Santo Domingo de Guzman
-                  </p>
                   <div class="project-details">
                     <div class="detail-item">
                       <i class="bi bi-geo-alt text-primary"></i>
@@ -233,11 +239,8 @@
               </div>
             </div>
 
-            <!-- Proyecto 2: Caja Piura -->
-            <div
-              class="col-lg-4 col-md-6 project-item"
-              data-category="edificios comercial"
-            >
+            <!-- OBRAS - Proyecto 2: Caja Piura -->
+            <div class="col-lg-4 col-md-6 project-item" data-category="obras">
               <div
                 class="project-card h-100"
                 onclick="openGallery('caja-piura')"
@@ -261,23 +264,32 @@
                     class="gallery-trigger"
                   ></a>
                   <a
-                    href="images/building-3.jpg"
+                    href="images/building-6.jpg"
                     data-lightbox="caja-piura"
                     data-title="Caja Piura - Área de cajas"
                     style="display: none"
                   ></a>
                   <a
-                    href="images/building-4.jpg"
+                    href="images/building-1.jpg"
                     data-lightbox="caja-piura"
-                    data-title="Caja Piura - Oficinas"
+                    data-title="Caja Piura - Oficinas administrativas"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-2.jpg"
+                    data-lightbox="caja-piura"
+                    data-title="Caja Piura - Sala de reuniones"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-3.jpg"
+                    data-lightbox="caja-piura"
+                    data-title="Caja Piura - Área de seguridad"
                     style="display: none"
                   ></a>
                 </div>
                 <div class="project-info p-4">
                   <h4>Sucursal Caja Piura</h4>
-                  <p class="text-muted">
-                    Agencia de la Caja Piura de operaciones financieras
-                  </p>
                   <div class="project-details">
                     <div class="detail-item">
                       <i class="bi bi-geo-alt text-primary"></i>
@@ -296,75 +308,8 @@
               </div>
             </div>
 
-            <!-- Proyecto 3: Data Center Movistar -->
-            <div
-              class="col-lg-4 col-md-6 project-item"
-              data-category="data-center"
-            >
-              <div
-                class="project-card h-100"
-                onclick="openGallery('data-center')"
-                style="cursor: pointer"
-              >
-                <div class="project-image">
-                  <img
-                    src="images/building-5.jpg"
-                    alt="Data Center Movistar"
-                    class="img-fluid"
-                  />
-                  <div class="project-overlay">
-                    <i class="bi bi-zoom-in"></i>
-                  </div>
-                  <!-- Hidden gallery images -->
-                  <a
-                    href="images/building-5.jpg"
-                    data-lightbox="data-center"
-                    data-title="Data Center Movistar - Sala principal"
-                    style="display: none"
-                    class="gallery-trigger"
-                  ></a>
-                  <a
-                    href="images/building-6.jpg"
-                    data-lightbox="data-center"
-                    data-title="Data Center - Equipos"
-                    style="display: none"
-                  ></a>
-                  <a
-                    href="images/building-1.jpg"
-                    data-lightbox="data-center"
-                    data-title="Data Center - Instalaciones"
-                    style="display: none"
-                  ></a>
-                </div>
-                <div class="project-info p-4">
-                  <h4>Data Center Movistar</h4>
-                  <p class="text-muted">
-                    Instalación y configuración de infraestructura de
-                    telecomunicaciones
-                  </p>
-                  <div class="project-details">
-                    <div class="detail-item">
-                      <i class="bi bi-geo-alt text-primary"></i>
-                      <span>Lima, Perú</span>
-                    </div>
-                    <div class="detail-item">
-                      <i class="bi bi-building text-primary"></i>
-                      <span>Movistar Perú</span>
-                    </div>
-                    <div class="detail-item">
-                      <i class="bi bi-calendar text-primary"></i>
-                      <span>2023</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Proyecto 4: Edificio Comercial -->
-            <div
-              class="col-lg-4 col-md-6 project-item"
-              data-category="edificios comercial"
-            >
+            <!-- OBRAS - Proyecto 3: Centro Comercial Plaza Mayor -->
+            <div class="col-lg-4 col-md-6 project-item" data-category="obras">
               <div
                 class="project-card h-100"
                 onclick="openGallery('plaza-mayor')"
@@ -373,7 +318,7 @@
                 <div class="project-image">
                   <img
                     src="images/building-1.jpg"
-                    alt="Edificio Comercial"
+                    alt="Centro Comercial Plaza Mayor"
                     class="img-fluid"
                   />
                   <div class="project-overlay">
@@ -383,14 +328,14 @@
                   <a
                     href="images/building-1.jpg"
                     data-lightbox="plaza-mayor"
-                    data-title="Centro Comercial Plaza Mayor - Fachada"
+                    data-title="Centro Comercial Plaza Mayor - Fachada principal"
                     style="display: none"
                     class="gallery-trigger"
                   ></a>
                   <a
                     href="images/building-2.jpg"
                     data-lightbox="plaza-mayor"
-                    data-title="Plaza Mayor - Interior"
+                    data-title="Plaza Mayor - Interior comercial"
                     style="display: none"
                   ></a>
                   <a
@@ -399,12 +344,27 @@
                     data-title="Plaza Mayor - Áreas comunes"
                     style="display: none"
                   ></a>
+                  <a
+                    href="images/building-4.jpg"
+                    data-lightbox="plaza-mayor"
+                    data-title="Plaza Mayor - Tiendas especializadas"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-5.jpg"
+                    data-lightbox="plaza-mayor"
+                    data-title="Plaza Mayor - Zona de restaurantes"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-6.jpg"
+                    data-lightbox="plaza-mayor"
+                    data-title="Plaza Mayor - Estacionamiento subterráneo"
+                    style="display: none"
+                  ></a>
                 </div>
                 <div class="project-info p-4">
                   <h4>Centro Comercial Plaza Mayor</h4>
-                  <p class="text-muted">
-                    Construcción de complejo comercial de 3 niveles
-                  </p>
                   <div class="project-details">
                     <div class="detail-item">
                       <i class="bi bi-geo-alt text-primary"></i>
@@ -423,20 +383,17 @@
               </div>
             </div>
 
-            <!-- Proyecto 5: Infraestructura Industrial -->
-            <div
-              class="col-lg-4 col-md-6 project-item"
-              data-category="infraestructura"
-            >
+            <!-- OBRAS - Proyecto 4: Edificio Residencial Los Pinos -->
+            <div class="col-lg-4 col-md-6 project-item" data-category="obras">
               <div
                 class="project-card h-100"
-                onclick="openGallery('tecnocom')"
+                onclick="openGallery('los-pinos')"
                 style="cursor: pointer"
               >
                 <div class="project-image">
                   <img
                     src="images/building-2.jpg"
-                    alt="Infraestructura Industrial"
+                    alt="Edificio Residencial Los Pinos"
                     class="img-fluid"
                   />
                   <div class="project-overlay">
@@ -445,29 +402,107 @@
                   <!-- Hidden gallery images -->
                   <a
                     href="images/building-2.jpg"
+                    data-lightbox="los-pinos"
+                    data-title="Edificio Residencial Los Pinos - Fachada moderna"
+                    style="display: none"
+                    class="gallery-trigger"
+                  ></a>
+                  <a
+                    href="images/building-3.jpg"
+                    data-lightbox="los-pinos"
+                    data-title="Los Pinos - Apartamentos tipo estudio"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-4.jpg"
+                    data-lightbox="los-pinos"
+                    data-title="Los Pinos - Área social y recreativa"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-5.jpg"
+                    data-lightbox="los-pinos"
+                    data-title="Los Pinos - Terraza con vista panorámica"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-6.jpg"
+                    data-lightbox="los-pinos"
+                    data-title="Los Pinos - Gimnasio comunitario"
+                    style="display: none"
+                  ></a>
+                </div>
+                <div class="project-info p-4">
+                  <h4>Edificio Residencial Los Pinos</h4>
+                  <div class="project-details">
+                    <div class="detail-item">
+                      <i class="bi bi-geo-alt text-primary"></i>
+                      <span>Lima, Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-building text-primary"></i>
+                      <span>Constructora Los Pinos</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-calendar text-primary"></i>
+                      <span>2023</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- OBRAS - Proyecto 5: Planta Industrial Tecnocom -->
+            <div class="col-lg-4 col-md-6 project-item" data-category="obras">
+              <div
+                class="project-card h-100"
+                onclick="openGallery('tecnocom')"
+                style="cursor: pointer"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/building-3.jpg"
+                    alt="Planta Industrial Tecnocom"
+                    class="img-fluid"
+                  />
+                  <div class="project-overlay">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <!-- Hidden gallery images -->
+                  <a
+                    href="images/building-3.jpg"
                     data-lightbox="tecnocom"
-                    data-title="Planta Industrial Tecnocom - Nave principal"
+                    data-title="Planta Industrial Tecnocom - Nave principal de producción"
                     style="display: none"
                     class="gallery-trigger"
                   ></a>
                   <a
                     href="images/building-4.jpg"
                     data-lightbox="tecnocom"
-                    data-title="Tecnocom - Oficinas administrativas"
+                    data-title="Tecnocom - Oficinas administrativas modernas"
                     style="display: none"
                   ></a>
                   <a
                     href="images/building-5.jpg"
                     data-lightbox="tecnocom"
-                    data-title="Tecnocom - Área de producción"
+                    data-title="Tecnocom - Área de producción automatizada"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-6.jpg"
+                    data-lightbox="tecnocom"
+                    data-title="Tecnocom - Almacén de productos terminados"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-1.jpg"
+                    data-lightbox="tecnocom"
+                    data-title="Tecnocom - Laboratorio de control de calidad"
                     style="display: none"
                   ></a>
                 </div>
                 <div class="project-info p-4">
                   <h4>Planta Industrial Tecnocom</h4>
-                  <p class="text-muted">
-                    Construcción de nave industrial y oficinas administrativas
-                  </p>
                   <div class="project-details">
                     <div class="detail-item">
                       <i class="bi bi-geo-alt text-primary"></i>
@@ -486,34 +521,129 @@
               </div>
             </div>
 
-            <!-- Proyecto 6: Sistema de Energía -->
-            <div
-              class="col-lg-4 col-md-6 project-item"
-              data-category="infraestructura"
-            >
-              <div class="project-card h-100">
+            <!-- OBRAS - Proyecto 6: Hospital Regional Cusco -->
+            <div class="col-lg-4 col-md-6 project-item" data-category="obras">
+              <div
+                class="project-card h-100"
+                onclick="openGallery('hospital-cusco')"
+                style="cursor: pointer"
+              >
                 <div class="project-image">
+                  <img
+                    src="images/building-4.jpg"
+                    alt="Hospital Regional Cusco"
+                    class="img-fluid"
+                  />
+                  <div class="project-overlay">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <!-- Hidden gallery images -->
+                  <a
+                    href="images/building-4.jpg"
+                    data-lightbox="hospital-cusco"
+                    data-title="Hospital Regional Cusco - Fachada principal"
+                    style="display: none"
+                    class="gallery-trigger"
+                  ></a>
+                  <a
+                    href="images/building-5.jpg"
+                    data-lightbox="hospital-cusco"
+                    data-title="Hospital Cusco - Sala de emergencias equipada"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-6.jpg"
+                    data-lightbox="hospital-cusco"
+                    data-title="Hospital Cusco - Quirófanos modernos"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-1.jpg"
+                    data-lightbox="hospital-cusco"
+                    data-title="Hospital Cusco - Habitaciones de internamiento"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-2.jpg"
+                    data-lightbox="hospital-cusco"
+                    data-title="Hospital Cusco - Laboratorio clínico"
+                    style="display: none"
+                  ></a>
                   <a
                     href="images/building-3.jpg"
-                    data-lightbox="tecnocom"
-                    data-title="Tecnocom - Sistema de Energía"
+                    data-lightbox="hospital-cusco"
+                    data-title="Hospital Cusco - Área de rehabilitación física"
                     style="display: none"
-                  >
-                    <img
-                      src="images/building-3.jpg"
-                      alt="Sistema de Energía"
-                      class="img-fluid"
-                    />
-                    <div class="project-overlay">
-                      <i class="bi bi-zoom-in"></i>
-                    </div>
-                  </a>
+                  ></a>
                 </div>
                 <div class="project-info p-4">
-                  <h4>Sistema Eléctrico Belmond</h4>
-                  <p class="text-muted">
-                    Instalación y mantenimiento de sistemas eléctricos
-                  </p>
+                  <h4>Hospital Regional Cusco</h4>
+                  <div class="project-details">
+                    <div class="detail-item">
+                      <i class="bi bi-geo-alt text-primary"></i>
+                      <span>Cusco, Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-building text-primary"></i>
+                      <span>Gobierno Regional Cusco</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-calendar text-primary"></i>
+                      <span>2022</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MANTENIMIENTO - Proyecto 1: Mantenimiento Hotel Belmond -->
+            <div
+              class="col-lg-4 col-md-6 project-item"
+              data-category="mantenimiento"
+            >
+              <div
+                class="project-card h-100"
+                onclick="openGallery('mantenimiento-belmond')"
+                style="cursor: pointer"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/building-5.jpg"
+                    alt="Mantenimiento Hotel Belmond"
+                    class="img-fluid"
+                  />
+                  <div class="project-overlay">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <!-- Hidden gallery images -->
+                  <a
+                    href="images/building-5.jpg"
+                    data-lightbox="mantenimiento-belmond"
+                    data-title="Hotel Belmond - Mantenimiento de sistemas eléctricos"
+                    style="display: none"
+                    class="gallery-trigger"
+                  ></a>
+                  <a
+                    href="images/building-6.jpg"
+                    data-lightbox="mantenimiento-belmond"
+                    data-title="Belmond - Mantenimiento de climatización"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-1.jpg"
+                    data-lightbox="mantenimiento-belmond"
+                    data-title="Belmond - Restauración de fachada"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-2.jpg"
+                    data-lightbox="mantenimiento-belmond"
+                    data-title="Belmond - Reparación de infraestructura"
+                    style="display: none"
+                  ></a>
+                </div>
+                <div class="project-info p-4">
+                  <h4>Mantenimiento Hotel Belmond</h4>
                   <div class="project-details">
                     <div class="detail-item">
                       <i class="bi bi-geo-alt text-primary"></i>
@@ -522,6 +652,780 @@
                     <div class="detail-item">
                       <i class="bi bi-building text-primary"></i>
                       <span>Belmond Hotels</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-calendar text-primary"></i>
+                      <span>2023</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MANTENIMIENTO - Proyecto 2: Mantenimiento Data Center Movistar -->
+            <div
+              class="col-lg-4 col-md-6 project-item"
+              data-category="mantenimiento"
+            >
+              <div
+                class="project-card h-100"
+                onclick="openGallery('mantenimiento-movistar')"
+                style="cursor: pointer"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/building-6.jpg"
+                    alt="Mantenimiento Data Center Movistar"
+                    class="img-fluid"
+                  />
+                  <div class="project-overlay">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <!-- Hidden gallery images -->
+                  <a
+                    href="images/building-6.jpg"
+                    data-lightbox="mantenimiento-movistar"
+                    data-title="Data Center Movistar - Mantenimiento de servidores"
+                    style="display: none"
+                    class="gallery-trigger"
+                  ></a>
+                  <a
+                    href="images/building-1.jpg"
+                    data-lightbox="mantenimiento-movistar"
+                    data-title="Movistar - Mantenimiento de refrigeración"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-2.jpg"
+                    data-lightbox="mantenimiento-movistar"
+                    data-title="Movistar - Mantenimiento de UPS"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-3.jpg"
+                    data-lightbox="mantenimiento-movistar"
+                    data-title="Movistar - Mantenimiento de sistemas de seguridad"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-4.jpg"
+                    data-lightbox="mantenimiento-movistar"
+                    data-title="Movistar - Mantenimiento de redes de datos"
+                    style="display: none"
+                  ></a>
+                </div>
+                <div class="project-info p-4">
+                  <h4>Mantenimiento Data Center Movistar</h4>
+                  <div class="project-details">
+                    <div class="detail-item">
+                      <i class="bi bi-geo-alt text-primary"></i>
+                      <span>Lima, Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-building text-primary"></i>
+                      <span>Movistar Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-calendar text-primary"></i>
+                      <span>2023</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MANTENIMIENTO - Proyecto 3: Mantenimiento Centro Comercial -->
+            <div
+              class="col-lg-4 col-md-6 project-item"
+              data-category="mantenimiento"
+            >
+              <div
+                class="project-card h-100"
+                onclick="openGallery('mantenimiento-centro-comercial')"
+                style="cursor: pointer"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/building-1.jpg"
+                    alt="Mantenimiento Centro Comercial"
+                    class="img-fluid"
+                  />
+                  <div class="project-overlay">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <!-- Hidden gallery images -->
+                  <a
+                    href="images/building-1.jpg"
+                    data-lightbox="mantenimiento-centro-comercial"
+                    data-title="Centro Comercial - Mantenimiento de escaleras mecánicas"
+                    style="display: none"
+                    class="gallery-trigger"
+                  ></a>
+                  <a
+                    href="images/building-2.jpg"
+                    data-lightbox="mantenimiento-centro-comercial"
+                    data-title="Centro Comercial - Mantenimiento de iluminación LED"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-3.jpg"
+                    data-lightbox="mantenimiento-centro-comercial"
+                    data-title="Centro Comercial - Mantenimiento de ascensores"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-4.jpg"
+                    data-lightbox="mantenimiento-centro-comercial"
+                    data-title="Centro Comercial - Mantenimiento de sistemas de seguridad"
+                    style="display: none"
+                  ></a>
+                </div>
+                <div class="project-info p-4">
+                  <h4>Mantenimiento Centro Comercial</h4>
+                  <div class="project-details">
+                    <div class="detail-item">
+                      <i class="bi bi-geo-alt text-primary"></i>
+                      <span>Arequipa, Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-building text-primary"></i>
+                      <span>Grupo Inmobiliario Arequipa</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-calendar text-primary"></i>
+                      <span>2022</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MANTENIMIENTO - Proyecto 4: Mantenimiento Planta Industrial -->
+            <div
+              class="col-lg-4 col-md-6 project-item"
+              data-category="mantenimiento"
+            >
+              <div
+                class="project-card h-100"
+                onclick="openGallery('mantenimiento-planta-industrial')"
+                style="cursor: pointer"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/building-2.jpg"
+                    alt="Mantenimiento Planta Industrial"
+                    class="img-fluid"
+                  />
+                  <div class="project-overlay">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <!-- Hidden gallery images -->
+                  <a
+                    href="images/building-2.jpg"
+                    data-lightbox="mantenimiento-planta-industrial"
+                    data-title="Planta Industrial - Mantenimiento de maquinaria pesada"
+                    style="display: none"
+                    class="gallery-trigger"
+                  ></a>
+                  <a
+                    href="images/building-3.jpg"
+                    data-lightbox="mantenimiento-planta-industrial"
+                    data-title="Planta Industrial - Mantenimiento de sistemas eléctricos"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-4.jpg"
+                    data-lightbox="mantenimiento-planta-industrial"
+                    data-title="Planta Industrial - Mantenimiento de naves industriales"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-5.jpg"
+                    data-lightbox="mantenimiento-planta-industrial"
+                    data-title="Planta Industrial - Mantenimiento de ventilación"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-6.jpg"
+                    data-lightbox="mantenimiento-planta-industrial"
+                    data-title="Planta Industrial - Mantenimiento de oficinas administrativas"
+                    style="display: none"
+                  ></a>
+                </div>
+                <div class="project-info p-4">
+                  <h4>Mantenimiento Planta Industrial</h4>
+                  <div class="project-details">
+                    <div class="detail-item">
+                      <i class="bi bi-geo-alt text-primary"></i>
+                      <span>Lima, Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-building text-primary"></i>
+                      <span>Tecnocom Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-calendar text-primary"></i>
+                      <span>2023</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MANTENIMIENTO - Proyecto 5: Mantenimiento Hospital -->
+            <div
+              class="col-lg-4 col-md-6 project-item"
+              data-category="mantenimiento"
+            >
+              <div
+                class="project-card h-100"
+                onclick="openGallery('mantenimiento-hospital')"
+                style="cursor: pointer"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/building-3.jpg"
+                    alt="Mantenimiento Hospital"
+                    class="img-fluid"
+                  />
+                  <div class="project-overlay">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <!-- Hidden gallery images -->
+                  <a
+                    href="images/building-3.jpg"
+                    data-lightbox="mantenimiento-hospital"
+                    data-title="Hospital - Mantenimiento de quirófanos especializados"
+                    style="display: none"
+                    class="gallery-trigger"
+                  ></a>
+                  <a
+                    href="images/building-4.jpg"
+                    data-lightbox="mantenimiento-hospital"
+                    data-title="Hospital - Mantenimiento de sistemas de oxígeno"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-5.jpg"
+                    data-lightbox="mantenimiento-hospital"
+                    data-title="Hospital - Mantenimiento de sistemas eléctricos médicos"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-6.jpg"
+                    data-lightbox="mantenimiento-hospital"
+                    data-title="Hospital - Mantenimiento de climatización hospitalaria"
+                    style="display: none"
+                  ></a>
+                </div>
+                <div class="project-info p-4">
+                  <h4>Mantenimiento Hospital Regional</h4>
+                  <div class="project-details">
+                    <div class="detail-item">
+                      <i class="bi bi-geo-alt text-primary"></i>
+                      <span>Cusco, Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-building text-primary"></i>
+                      <span>Gobierno Regional Cusco</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-calendar text-primary"></i>
+                      <span>2023</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MANTENIMIENTO - Proyecto 6: Mantenimiento Edificio Residencial -->
+            <div
+              class="col-lg-4 col-md-6 project-item"
+              data-category="mantenimiento"
+            >
+              <div
+                class="project-card h-100"
+                onclick="openGallery('mantenimiento-residencial')"
+                style="cursor: pointer"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/building-4.jpg"
+                    alt="Mantenimiento Edificio Residencial"
+                    class="img-fluid"
+                  />
+                  <div class="project-overlay">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <!-- Hidden gallery images -->
+                  <a
+                    href="images/building-4.jpg"
+                    data-lightbox="mantenimiento-residencial"
+                    data-title="Edificio Residencial - Mantenimiento de fachada exterior"
+                    style="display: none"
+                    class="gallery-trigger"
+                  ></a>
+                  <a
+                    href="images/building-5.jpg"
+                    data-lightbox="mantenimiento-residencial"
+                    data-title="Residencial - Mantenimiento de ascensores residenciales"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-6.jpg"
+                    data-lightbox="mantenimiento-residencial"
+                    data-title="Residencial - Mantenimiento de sistemas de seguridad"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-1.jpg"
+                    data-lightbox="mantenimiento-residencial"
+                    data-title="Residencial - Mantenimiento de áreas comunes"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-2.jpg"
+                    data-lightbox="mantenimiento-residencial"
+                    data-title="Residencial - Mantenimiento de sistemas eléctricos"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-3.jpg"
+                    data-lightbox="mantenimiento-residencial"
+                    data-title="Residencial - Mantenimiento de jardines y paisajismo"
+                    style="display: none"
+                  ></a>
+                </div>
+                <div class="project-info p-4">
+                  <h4>Mantenimiento Edificio Residencial</h4>
+                  <div class="project-details">
+                    <div class="detail-item">
+                      <i class="bi bi-geo-alt text-primary"></i>
+                      <span>Lima, Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-building text-primary"></i>
+                      <span>Constructora Los Pinos</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-calendar text-primary"></i>
+                      <span>2023</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONSULTORÍA - Proyecto 1: Consultoría Hotel Belmond -->
+            <div
+              class="col-lg-4 col-md-6 project-item"
+              data-category="consultoria"
+            >
+              <div
+                class="project-card h-100"
+                onclick="openGallery('consultoria-belmond')"
+                style="cursor: pointer"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/building-5.jpg"
+                    alt="Consultoría Hotel Belmond"
+                    class="img-fluid"
+                  />
+                  <div class="project-overlay">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <!-- Hidden gallery images -->
+                  <a
+                    href="images/building-5.jpg"
+                    data-lightbox="consultoria-belmond"
+                    data-title="Hotel Belmond - Consultoría en sistemas eléctricos"
+                    style="display: none"
+                    class="gallery-trigger"
+                  ></a>
+                  <a
+                    href="images/building-6.jpg"
+                    data-lightbox="consultoria-belmond"
+                    data-title="Belmond - Análisis de eficiencia energética"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-1.jpg"
+                    data-lightbox="consultoria-belmond"
+                    data-title="Belmond - Evaluación de infraestructura hotelera"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-2.jpg"
+                    data-lightbox="consultoria-belmond"
+                    data-title="Belmond - Plan de mejoras y optimización"
+                    style="display: none"
+                  ></a>
+                </div>
+                <div class="project-info p-4">
+                  <h4>Consultoría Hotel Belmond</h4>
+                  <div class="project-details">
+                    <div class="detail-item">
+                      <i class="bi bi-geo-alt text-primary"></i>
+                      <span>Cusco, Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-building text-primary"></i>
+                      <span>Belmond Hotels</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-calendar text-primary"></i>
+                      <span>2023</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONSULTORÍA - Proyecto 2: Consultoría Data Center -->
+            <div
+              class="col-lg-4 col-md-6 project-item"
+              data-category="consultoria"
+            >
+              <div
+                class="project-card h-100"
+                onclick="openGallery('consultoria-data-center')"
+                style="cursor: pointer"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/building-6.jpg"
+                    alt="Consultoría Data Center"
+                    class="img-fluid"
+                  />
+                  <div class="project-overlay">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <!-- Hidden gallery images -->
+                  <a
+                    href="images/building-6.jpg"
+                    data-lightbox="consultoria-data-center"
+                    data-title="Data Center - Consultoría en seguridad informática"
+                    style="display: none"
+                    class="gallery-trigger"
+                  ></a>
+                  <a
+                    href="images/building-1.jpg"
+                    data-lightbox="consultoria-data-center"
+                    data-title="Data Center - Análisis de eficiencia energética"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-2.jpg"
+                    data-lightbox="consultoria-data-center"
+                    data-title="Data Center - Evaluación de sistemas de refrigeración"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-3.jpg"
+                    data-lightbox="consultoria-data-center"
+                    data-title="Data Center - Plan de optimización de infraestructura"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-4.jpg"
+                    data-lightbox="consultoria-data-center"
+                    data-title="Data Center - Consultoría en redes de datos"
+                    style="display: none"
+                  ></a>
+                </div>
+                <div class="project-info p-4">
+                  <h4>Consultoría Data Center</h4>
+                  <div class="project-details">
+                    <div class="detail-item">
+                      <i class="bi bi-geo-alt text-primary"></i>
+                      <span>Lima, Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-building text-primary"></i>
+                      <span>Movistar Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-calendar text-primary"></i>
+                      <span>2023</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONSULTORÍA - Proyecto 3: Consultoría Centro Comercial -->
+            <div
+              class="col-lg-4 col-md-6 project-item"
+              data-category="consultoria"
+            >
+              <div
+                class="project-card h-100"
+                onclick="openGallery('consultoria-centro-comercial')"
+                style="cursor: pointer"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/building-1.jpg"
+                    alt="Consultoría Centro Comercial"
+                    class="img-fluid"
+                  />
+                  <div class="project-overlay">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <!-- Hidden gallery images -->
+                  <a
+                    href="images/building-1.jpg"
+                    data-lightbox="consultoria-centro-comercial"
+                    data-title="Centro Comercial - Consultoría en seguridad comercial"
+                    style="display: none"
+                    class="gallery-trigger"
+                  ></a>
+                  <a
+                    href="images/building-2.jpg"
+                    data-lightbox="consultoria-centro-comercial"
+                    data-title="Centro Comercial - Análisis de flujo de clientes"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-3.jpg"
+                    data-lightbox="consultoria-centro-comercial"
+                    data-title="Centro Comercial - Evaluación de sistemas de climatización"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-4.jpg"
+                    data-lightbox="consultoria-centro-comercial"
+                    data-title="Centro Comercial - Plan de mejoras de accesibilidad"
+                    style="display: none"
+                  ></a>
+                </div>
+                <div class="project-info p-4">
+                  <h4>Consultoría Centro Comercial</h4>
+                  <div class="project-details">
+                    <div class="detail-item">
+                      <i class="bi bi-geo-alt text-primary"></i>
+                      <span>Arequipa, Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-building text-primary"></i>
+                      <span>Grupo Inmobiliario Arequipa</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-calendar text-primary"></i>
+                      <span>2022</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONSULTORÍA - Proyecto 4: Consultoría Planta Industrial -->
+            <div
+              class="col-lg-4 col-md-6 project-item"
+              data-category="consultoria"
+            >
+              <div
+                class="project-card h-100"
+                onclick="openGallery('consultoria-planta-industrial')"
+                style="cursor: pointer"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/building-2.jpg"
+                    alt="Consultoría Planta Industrial"
+                    class="img-fluid"
+                  />
+                  <div class="project-overlay">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <!-- Hidden gallery images -->
+                  <a
+                    href="images/building-2.jpg"
+                    data-lightbox="consultoria-planta-industrial"
+                    data-title="Planta Industrial - Consultoría en seguridad industrial"
+                    style="display: none"
+                    class="gallery-trigger"
+                  ></a>
+                  <a
+                    href="images/building-3.jpg"
+                    data-lightbox="consultoria-planta-industrial"
+                    data-title="Planta Industrial - Análisis de procesos productivos"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-4.jpg"
+                    data-lightbox="consultoria-planta-industrial"
+                    data-title="Planta Industrial - Evaluación de eficiencia energética"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-5.jpg"
+                    data-lightbox="consultoria-planta-industrial"
+                    data-title="Planta Industrial - Plan de optimización de procesos"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-6.jpg"
+                    data-lightbox="consultoria-planta-industrial"
+                    data-title="Planta Industrial - Consultoría ambiental y sostenibilidad"
+                    style="display: none"
+                  ></a>
+                </div>
+                <div class="project-info p-4">
+                  <h4>Consultoría Planta Industrial</h4>
+                  <div class="project-details">
+                    <div class="detail-item">
+                      <i class="bi bi-geo-alt text-primary"></i>
+                      <span>Lima, Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-building text-primary"></i>
+                      <span>Tecnocom Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-calendar text-primary"></i>
+                      <span>2023</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONSULTORÍA - Proyecto 5: Consultoría Hospital -->
+            <div
+              class="col-lg-4 col-md-6 project-item"
+              data-category="consultoria"
+            >
+              <div
+                class="project-card h-100"
+                onclick="openGallery('consultoria-hospital')"
+                style="cursor: pointer"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/building-3.jpg"
+                    alt="Consultoría Hospital"
+                    class="img-fluid"
+                  />
+                  <div class="project-overlay">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <!-- Hidden gallery images -->
+                  <a
+                    href="images/building-3.jpg"
+                    data-lightbox="consultoria-hospital"
+                    data-title="Hospital - Consultoría en sistemas médicos especializados"
+                    style="display: none"
+                    class="gallery-trigger"
+                  ></a>
+                  <a
+                    href="images/building-4.jpg"
+                    data-lightbox="consultoria-hospital"
+                    data-title="Hospital - Análisis de seguridad hospitalaria"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-5.jpg"
+                    data-lightbox="consultoria-hospital"
+                    data-title="Hospital - Evaluación de infraestructura médica"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-6.jpg"
+                    data-lightbox="consultoria-hospital"
+                    data-title="Hospital - Plan de modernización tecnológica"
+                    style="display: none"
+                  ></a>
+                </div>
+                <div class="project-info p-4">
+                  <h4>Consultoría Hospital Regional</h4>
+                  <div class="project-details">
+                    <div class="detail-item">
+                      <i class="bi bi-geo-alt text-primary"></i>
+                      <span>Cusco, Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-building text-primary"></i>
+                      <span>Gobierno Regional Cusco</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-calendar text-primary"></i>
+                      <span>2023</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONSULTORÍA - Proyecto 6: Consultoría Edificio Residencial -->
+            <div
+              class="col-lg-4 col-md-6 project-item"
+              data-category="consultoria"
+            >
+              <div
+                class="project-card h-100"
+                onclick="openGallery('consultoria-residencial')"
+                style="cursor: pointer"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/building-1.jpg"
+                    alt="Consultoría Edificio Residencial"
+                    class="img-fluid"
+                  />
+                  <div class="project-overlay">
+                    <i class="bi bi-zoom-in"></i>
+                  </div>
+                  <!-- Hidden gallery images -->
+                  <a
+                    href="images/building-4.jpg"
+                    data-lightbox="consultoria-residencial"
+                    data-title="Edificio Residencial - Consultoría en seguridad residencial"
+                    style="display: none"
+                    class="gallery-trigger"
+                  ></a>
+                  <a
+                    href="images/building-5.jpg"
+                    data-lightbox="consultoria-residencial"
+                    data-title="Residencial - Análisis de eficiencia energética residencial"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-6.jpg"
+                    data-lightbox="consultoria-residencial"
+                    data-title="Residencial - Evaluación de sistemas de climatización"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-1.jpg"
+                    data-lightbox="consultoria-residencial"
+                    data-title="Residencial - Plan de mejoras de habitabilidad"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-2.jpg"
+                    data-lightbox="consultoria-residencial"
+                    data-title="Residencial - Consultoría de accesibilidad universal"
+                    style="display: none"
+                  ></a>
+                  <a
+                    href="images/building-3.jpg"
+                    data-lightbox="consultoria-residencial"
+                    data-title="Residencial - Análisis de sostenibilidad ambiental"
+                    style="display: none"
+                  ></a>
+                </div>
+                <div class="project-info p-4">
+                  <h4>Consultoría Edificio Residencial</h4>
+                  <div class="project-details">
+                    <div class="detail-item">
+                      <i class="bi bi-geo-alt text-primary"></i>
+                      <span>Lima, Perú</span>
+                    </div>
+                    <div class="detail-item">
+                      <i class="bi bi-building text-primary"></i>
+                      <span>Constructora Los Pinos</span>
                     </div>
                     <div class="detail-item">
                       <i class="bi bi-calendar text-primary"></i>
@@ -549,7 +1453,7 @@
           <div class="row text-center">
             <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
               <div class="stat-item">
-                <div class="stat-number">150+</div>
+                <div class="stat-number">1200+</div>
                 <div class="stat-label">Proyectos Completados</div>
               </div>
             </div>
@@ -559,7 +1463,7 @@
               data-aos-delay="100"
             >
               <div class="stat-item">
-                <div class="stat-number">25+</div>
+                <div class="stat-number">850+</div>
                 <div class="stat-label">Clientes Satisfechos</div>
               </div>
             </div>
@@ -683,8 +1587,13 @@
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  ATD PERU. Todos los derechos reservados.<br />Powered by KIWI
-                  SYSTEMS</small
+                  ATD PERU. Todos los derechos reservados.<br />
+                  <a
+                    href="politica-privacidad.html"
+                    class="text-white-50 text-decoration-none"
+                    >Política de Privacidad</a
+                  >
+                  | Powered by KIWI SYSTEMS</small
                 >
               </p>
             </div>
@@ -1095,7 +2004,7 @@
             projectItems.forEach((item) => {
               if (
                 filter === "todos" ||
-                item.getAttribute("data-category").includes(filter)
+                item.getAttribute("data-category") === filter
               ) {
                 item.style.display = "block";
               } else {
