@@ -737,125 +737,6 @@ function initAnalytics() {
 }
 
 /**
- * Search Functionality
- */
-function initSearch() {
-  const searchInput = document.getElementById("searchInput");
-  const searchButton = document.getElementById("searchButton");
-  const searchResults = document.getElementById("searchResults");
-
-  if (!searchInput || !searchButton || !searchResults) return;
-
-  // Search data - in a real app, this would come from a database
-  const searchData = [
-    {
-      title: "Construcción y Obras Civiles",
-      description:
-        "Soluciones de calidad basadas estrictamente en las normas vigentes y reglamentos de obras civiles",
-      url: "servicios.html#construccion",
-      category: "Servicios",
-    },
-    {
-      title: "Consultoría en Ingeniería",
-      description:
-        "Servicios con profesionales especialmente capacitados en ingeniería e instalaciones especiales",
-      url: "servicios.html#consultoria",
-      category: "Servicios",
-    },
-    {
-      title: "Data Center y Telecomunicaciones",
-      description:
-        "Instalación de cableado estructurado, cuartos de telecomunicaciones y certificación de cableado",
-      url: "servicios.html#data-center",
-      category: "Servicios",
-    },
-    {
-      title: "Proyectos Movistar",
-      description:
-        "Data Center y obras de telecomunicaciones para Movistar en Cusco",
-      url: "experiencia.html#movistar",
-      category: "Proyectos",
-    },
-    {
-      title: "Hoteles Belmond",
-      description:
-        "Proyectos de construcción y mantenimiento para hoteles Belmond en Cusco y Machu Picchu",
-      url: "experiencia.html#belmond",
-      category: "Proyectos",
-    },
-    {
-      title: "Sobre ATD PERU",
-      description:
-        "Conoce nuestra historia, misión, visión y valores como empresa líder en construcción",
-      url: "nosotros.html",
-      category: "Empresa",
-    },
-  ];
-
-  function performSearch(query) {
-    if (!query.trim()) {
-      searchResults.innerHTML =
-        '<p class="text-muted">Ingresa un término de búsqueda</p>';
-      return;
-    }
-
-    const results = searchData.filter(
-      (item) =>
-        item.title.toLowerCase().includes(query.toLowerCase()) ||
-        item.description.toLowerCase().includes(query.toLowerCase()) ||
-        item.category.toLowerCase().includes(query.toLowerCase())
-    );
-
-    if (results.length === 0) {
-      searchResults.innerHTML =
-        '<p class="text-muted">No se encontraron resultados para "' +
-        query +
-        '"</p>';
-      return;
-    }
-
-    const resultsHTML = results
-      .map(
-        (item) => `
-      <div class="search-result-item p-3 border-bottom">
-        <h6 class="mb-1">
-          <a href="${item.url}" class="text-decoration-none">${item.title}</a>
-        </h6>
-        <p class="text-muted mb-1">${item.description}</p>
-        <small class="badge bg-primary">${item.category}</small>
-      </div>
-    `
-      )
-      .join("");
-
-    searchResults.innerHTML = resultsHTML;
-  }
-
-  // Search on button click
-  searchButton.addEventListener("click", () => {
-    performSearch(searchInput.value);
-  });
-
-  // Search on Enter key
-  searchInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-      performSearch(searchInput.value);
-    }
-  });
-
-  // Clear results when modal opens
-  const searchModal = document.getElementById("searchModal");
-  if (searchModal) {
-    searchModal.addEventListener("show.bs.modal", () => {
-      searchInput.value = "";
-      searchResults.innerHTML =
-        '<p class="text-muted">Ingresa un término de búsqueda</p>';
-      searchInput.focus();
-    });
-  }
-}
-
-/**
  * Service Worker Registration (for PWA features)
  */
 function initServiceWorker() {
@@ -876,7 +757,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initAccessibility();
   initErrorHandling();
   initAnalytics();
-  initSearch();
   initServiceWorker();
 });
 
