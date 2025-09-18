@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initNavigation();
   initHeroSwiper();
   initPartnersSwiper();
+  initTeamGallerySwiper();
   initCounters();
   initAOS();
   initBackToTop();
@@ -139,7 +140,7 @@ function initPartnersSwiper() {
     new Swiper(".partners-swiper", {
       loop: true,
       autoplay: {
-        delay: 3000,
+        delay: 1500,
         disableOnInteraction: false,
       },
       slidesPerView: 2,
@@ -169,6 +170,44 @@ function initPartnersSwiper() {
 }
 
 /**
+ * Team Gallery Carousel Swiper
+ */
+function initTeamGallerySwiper() {
+  const teamGallerySwiper = document.querySelector(".team-gallery-swiper");
+
+  if (teamGallerySwiper) {
+    try {
+      new Swiper(".team-gallery-swiper", {
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        slidesPerView: 1,
+        spaceBetween: 0,
+        centeredSlides: true,
+        speed: 800,
+        grabCursor: true,
+        navigation: {
+          nextEl: ".team-gallery-next",
+          prevEl: ".team-gallery-prev",
+        },
+        pagination: {
+          el: ".team-gallery-pagination",
+          clickable: true,
+        },
+        effect: "slide",
+        fadeEffect: {
+          crossFade: true,
+        },
+      });
+    } catch (error) {
+      console.error("Error initializing team gallery swiper:", error);
+    }
+  }
+}
+
+/**
  * Animated Counters
  */
 function initCounters() {
@@ -185,7 +224,7 @@ function initCounters() {
         if (entry.isIntersecting) {
           const counter = entry.target;
           const target = parseInt(counter.getAttribute("data-target"));
-          const duration = 2000; // 2 seconds
+          const duration = 3000; // 3 seconds
           const increment = target / (duration / 16); // 60fps
           let current = 0;
 
@@ -273,12 +312,21 @@ function initSmoothScrolling() {
       if (targetElement) {
         e.preventDefault();
 
-        const offsetTop = targetElement.offsetTop - 80; // Account for fixed navbar
+        // Calculate offset accounting for fixed navbar
+        const navbar = document.querySelector(".navbar");
+        const navbarHeight = navbar ? navbar.offsetHeight : 100;
+        const offsetTop = targetElement.offsetTop - navbarHeight - 20; // Extra 20px margin
 
+        // Smooth scroll to target
         window.scrollTo({
-          top: offsetTop,
+          top: Math.max(0, offsetTop), // Ensure we don't scroll to negative position
           behavior: "smooth",
         });
+
+        // Update URL hash after scroll
+        setTimeout(() => {
+          window.history.pushState(null, null, href);
+        }, 100);
       }
     });
   });
@@ -839,6 +887,7 @@ if (typeof module !== "undefined" && module.exports) {
     initNavigation,
     initHeroSwiper,
     initPartnersSwiper,
+    initTeamGallerySwiper,
     initCounters,
     initAOS,
     initBackToTop,

@@ -269,17 +269,200 @@ a:focus {
 }
 
 .btn-outline-primary {
-  border: 2px solid #ffffff !important;
-  color: #ffffff !important;
+  border: 2px solid var(--primary-color) !important;
+  color: var(--primary-color) !important;
   background: transparent !important;
   font-weight: 600 !important;
+  transition: var(--transition) !important;
 }
 
 .btn-outline-primary:hover {
-  background: #ffffff !important;
-  color: #4a5568 !important;
+  background: var(--primary-color) !important;
+  color: #ffffff !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3) !important;
+}
+
+/* Estilo específico para botones de servicios */
+.service-card .btn-outline-primary {
+  border: 2px solid var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  background: transparent !important;
+  font-weight: 600 !important;
+  transition: var(--transition) !important;
+  padding: 0.5rem 1.5rem !important;
+  border-radius: 25px !important;
+}
+
+.service-card .btn-outline-primary:hover {
+  background: var(--primary-color) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(196, 30, 58, 0.4) !important;
+}
+
+/* =======================================================
+*  Team Gallery Carousel
+* ======================================================= */
+.team-gallery-swiper {
+  padding: 2rem 0;
+  overflow: hidden;
+}
+
+.team-gallery-item {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+  height: 450px;
+  background: #f8f9fa;
+  max-width: 800px;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+}
+
+.team-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.team-gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 2rem 1.5rem 1.5rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.team-gallery-item:hover .team-gallery-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.team-gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.team-gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.team-gallery-overlay h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.team-gallery-overlay p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Navigation buttons */
+.team-gallery-next,
+.team-gallery-prev {
+  color: var(--primary-color) !important;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.team-gallery-next:hover,
+.team-gallery-prev:hover {
+  background: var(--primary-color);
+  color: white !important;
+  transform: scale(1.1);
+}
+
+.team-gallery-next:after,
+.team-gallery-prev:after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Pagination */
+.team-gallery-pagination {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.team-gallery-pagination .swiper-pagination-bullet {
+  background: rgba(196, 30, 58, 0.3);
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  transition: var(--transition);
+}
+
+.team-gallery-pagination .swiper-pagination-bullet-active {
+  background: var(--primary-color);
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-gallery-item {
+    height: 350px;
+    max-width: 100%;
+    margin: 0 1rem;
+    aspect-ratio: 16/9;
+  }
+
+  .team-gallery-overlay {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .team-gallery-overlay h5 {
+    font-size: 1.2rem;
+  }
+
+  .team-gallery-overlay p {
+    font-size: 0.9rem;
+  }
+
+  .team-gallery-next,
+  .team-gallery-prev {
+    width: 45px;
+    height: 45px;
+    margin-top: -22px;
+  }
+
+  .team-gallery-next:after,
+  .team-gallery-prev:after {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .team-gallery-item {
+    height: 300px;
+    margin: 0 0.5rem;
+    aspect-ratio: 16/9;
+  }
+
+  .team-gallery-overlay h5 {
+    font-size: 1.1rem;
+  }
+
+  .team-gallery-overlay p {
+    font-size: 0.85rem;
+  }
 }
 
 /* =======================================================
@@ -517,8 +700,8 @@ a:focus {
 /* Clase eliminada - usar p-4 de Bootstrap en su lugar */
 
 .icon-wrapper {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   background: linear-gradient(
     135deg,
     var(--primary-100) 0%,
@@ -534,7 +717,7 @@ a:focus {
 }
 
 .icon-wrapper i {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--primary-color);
 }
 
@@ -557,8 +740,8 @@ a:focus {
 }
 
 .service-icon {
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 75px;
   background: linear-gradient(
     135deg,
     var(--primary-color) 0%,
@@ -574,7 +757,7 @@ a:focus {
 }
 
 .service-icon i {
-  font-size: 1.5rem;
+  font-size: 1.875rem;
   color: var(--white);
 }
 
@@ -655,17 +838,17 @@ a:focus {
 }
 
 .partner-logo {
-  max-width: 150px;
+  max-width: 189.75px;
   height: auto;
-  filter: grayscale(100%);
+  filter: grayscale(0%);
   transition: var(--transition);
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .partner-logo:hover {
   filter: grayscale(0%);
   opacity: 1;
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 /* =======================================================
