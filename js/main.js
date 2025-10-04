@@ -494,12 +494,59 @@ function initContactForm() {
         return;
       }
 
-      // Simulate form submission (replace with actual form handling)
-      showNotification(
-        "Mensaje enviado correctamente. Nos pondremos en contacto pronto.",
-        "success"
-      );
-      this.reset();
+      // Verificar política de privacidad
+      const privacy = formData.get("privacy");
+      if (!privacy) {
+        showNotification(
+          "Debe aceptar la política de privacidad para continuar.",
+          "error"
+        );
+        return;
+      }
+
+      // Mostrar indicador de carga
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML =
+        '<i class="bi bi-hourglass-split me-2"></i>Enviando...';
+      submitBtn.disabled = true;
+
+      // Enviar formulario al servidor
+      fetch("contact-form-handler.php", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            showNotification(data.message, "success");
+            this.reset();
+
+            // Mostrar mensaje adicional si se envió confirmación
+            if (data.confirmation_sent) {
+              setTimeout(() => {
+                showNotification(
+                  "Se ha enviado un email de confirmación a su correo.",
+                  "info"
+                );
+              }, 2000);
+            }
+          } else {
+            showNotification(data.message, "error");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          showNotification(
+            "Error de conexión. Por favor, intente nuevamente.",
+            "error"
+          );
+        })
+        .finally(() => {
+          // Restaurar botón
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        });
     });
   }
 }

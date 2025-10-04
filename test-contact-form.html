@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Formulario de Contacto - ATD PERU</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="mb-0">Test - Formulario de Contacto ATD PERU</h3>
+            </div>
+            <div class="card-body">
+              <form
+                id="testContactForm"
+                action="contact-form-handler.php"
+                method="POST"
+              >
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="name" class="form-label"
+                      >Nombre Completo *</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      name="name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label">Teléfono *</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="phone"
+                      name="phone"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label for="email" class="form-label">Email *</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label for="subject" class="form-label">Asunto</label>
+                    <select class="form-select" id="subject" name="subject">
+                      <option value="">Selecciona un asunto</option>
+                      <option value="obras-civiles">Obras Civiles</option>
+                      <option value="mantenimiento">Mantenimiento</option>
+                      <option value="consultoria">Consultoría</option>
+                      <option value="energia">Energía</option>
+                      <option value="data-center">Data Center</option>
+                      <option value="climatizacion">Climatización</option>
+                      <option value="otro">Otro</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label for="message" class="form-label">Mensaje *</label>
+                    <textarea
+                      class="form-control"
+                      id="message"
+                      name="message"
+                      rows="5"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="privacy"
+                        name="privacy"
+                        required
+                      />
+                      <label class="form-check-label" for="privacy">
+                        Acepto la política de privacidad *
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary">
+                      <i class="bi bi-send me-2"></i>Enviar Mensaje de Prueba
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <div id="response" class="mt-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document
+        .getElementById("testContactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(this);
+          const submitBtn = this.querySelector('button[type="submit"]');
+          const responseDiv = document.getElementById("response");
+
+          submitBtn.innerHTML =
+            '<i class="bi bi-hourglass-split me-2"></i>Enviando...';
+          submitBtn.disabled = true;
+
+          fetch("contact-form-handler.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              responseDiv.innerHTML = `
+                    <div class="alert alert-${
+                      data.success ? "success" : "danger"
+                    }">
+                        <h5>${data.success ? "Éxito" : "Error"}</h5>
+                        <p>${data.message}</p>
+                        ${
+                          data.confirmation_sent
+                            ? "<p><small>Se envió email de confirmación al cliente.</small></p>"
+                            : ""
+                        }
+                    </div>
+                `;
+
+              if (data.success) {
+                this.reset();
+              }
+            })
+            .catch((error) => {
+              responseDiv.innerHTML = `
+                    <div class="alert alert-danger">
+                        <h5>Error de Conexión</h5>
+                        <p>No se pudo conectar con el servidor.</p>
+                    </div>
+                `;
+            })
+            .finally(() => {
+              submitBtn.innerHTML =
+                '<i class="bi bi-send me-2"></i>Enviar Mensaje de Prueba';
+              submitBtn.disabled = false;
+            });
+        });
+    </script>
+  </body>
+</html>
+
